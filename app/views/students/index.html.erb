@@ -1,0 +1,40 @@
+<h1>Student Listing</h1>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 {
+    width: 100%;    
+    background-color: #f1f1c1;
+}
+</style>
+<table style="width: 100%">
+	<thead>
+    <tr>
+      <th>Name</th>
+      <th>Teacher Name</th>
+      <th>School</th>
+      <th>Actions</th>
+    </tr>
+	</thead>
+	<tbody>
+		<% @students.each do |student| %>
+		  <tr>
+		  	<td><%= student.name %></td>
+        <td><%= student.teacher.name %></td>
+        <td><%= student.school %></td>
+        <td><%= link_to 'Teacher', teacher_path(student.teacher) %></td>
+        <td><%= link_to 'Show', teacher_student_path(@teacher,student) %></td>
+        <td><%= link_to 'Edit', edit_teacher_student_path(@teacher,student) %></td>
+        <td><%= link_to 'Destroy', teacher_student_path(@teacher,student),
+                          method: :delete, data: { clear: 'Are you sure?' }  %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>
+<%= link_to 'New student', new_teacher_student_path(@teacher) %>

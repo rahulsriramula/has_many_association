@@ -1,0 +1,14 @@
+	<p>
+  <strong>Teacher Name</strong>
+  <%= @teacher.name %>
+</p>
+<p>
+  <strong> Salary</strong>
+  <%= @teacher.salary %>
+</p>
+<p>
+  <strong> School</strong>
+  <%= @teacher.school %>
+</p>
+<%= link_to 'edit', edit_teacher_path(@teacher) %>
+<%= link_to 'Back to Index', teachers_path %>

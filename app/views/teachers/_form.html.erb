@@ -1,0 +1,20 @@
+<%= form_for @teacher do |teacher| %>
+  <p>
+    <%= teacher.label "Name" %>
+    <%= teacher.text_field :name %>
+  </p>
+
+  <p>
+    <%= teacher.label "Salary" %>
+    <%= teacher.text_field :salary %>
+  </p>
+
+  <p>
+    <%= teacher.label "School" %>
+    <%= teacher.text_field :school %>
+  </p>
+
+   <p>
+    <%= teacher.submit "Submit" %>
+  </p>
+<% end %>

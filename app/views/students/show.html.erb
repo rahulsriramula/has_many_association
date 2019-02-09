@@ -1,0 +1,10 @@
+<p>
+  <strong>Student Name</strong>
+  <%= @student.name %>
+</p>s
+<p>
+  <strong> School</strong>
+  <%= @student.school %>
+</p>
+<%= link_to 'edit', edit_teacher_student_path(@teacher, @student) %>
+<%= link_to 'Back to Index', teacher_student_path(@teacher, @student) %>
